@@ -116,7 +116,7 @@
       }
     }
     return result;
-  }
+  };
 
   const uniqUnsorted = (arr, iterator) => {
     const result = [];
@@ -139,7 +139,7 @@
       }
     }
     return result;
-  }
+  };
 
   const iterate = (originalArr, iterator) => {
     const arr = _.map(originalArr, (elem) => iterator(elem));
@@ -216,7 +216,7 @@
     if (Array.isArray(collection)) {
       let acc = collection[0];
       let i = 1;
-      if (accumulator || accumulator === 0) {
+      if (accumulator !== undefined) {
         acc = accumulator;
         i = 0;
       }
@@ -267,7 +267,7 @@
       } else {
         return false;
       }
-    }, true)
+    }, true);
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
@@ -284,7 +284,7 @@
       } else {
         return !iterator(item);
       }
-    })
+    });
   };
 
 
@@ -381,7 +381,7 @@
         cache[key] = func.apply(this, arguments);
       }
       return cache[key];
-    }
+    };
     // return closure function
     return memo;
   };
